@@ -42,16 +42,25 @@ public abstract class  Conta implements IConta {
 
     @Override
     public void sacar(double valor) {
+        saldo = saldo - valor;
 
     }
 
     @Override
-    public void depositar(double depositar) {
-
+    public void depositar(double valor) {
+        saldo = saldo + valor;
     }
 
     @Override
     public void transferir(double valor, Conta contaDestino) {
+        this.sacar(valor);
+        contaDestino.depositar(valor);
+    }
 
+    public void imprimirInfoComum() {
+        System.out.println("Extrato conta corrente");
+        System.out.println(" Agencia : " + agencia);
+        System.out.println(" Numero : " + numero);
+        System.out.println(" Saldo : " + saldo);
     }
 }

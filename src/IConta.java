@@ -9,6 +9,8 @@ public interface IConta {
 
      void transferir(double valor, Conta contaDestino); // quem transfere, transfere alguma coisa, pra algum lugar
 
+     void imprimirExtrato();
+
 
 
 
